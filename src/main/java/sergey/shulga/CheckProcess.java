@@ -4,29 +4,41 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 public class CheckProcess {
-    private static final Logger logger = LogManager.getLogger(CheckProcess.class);
-    private boolean isProcessCaptured = false;
 
-    protected void checkProcess() {
+    private static final Logger logger = LogManager.getLogger(CheckProcess.class);
+    private boolean isPassCheckDone = false;
+
+    public void startChecking() {
+        // Создаем daemon-поток, который будет периодически проверять запущен ли процесс
+        ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
+        scheduler.scheduleAtFixedRate(this::checkProcess, 0, 1, TimeUnit.SECONDS);
+    }
+
+    private void checkProcess() {
         String processName = "Telegram";
 
-        while (!isProcessCaptured) {
-            try {
-                if (isProcessRunning(processName)) {
-                    System.out.println(processName + " is running.");
-                    PassControl passControl = PassControl.getInstance();
-                    passControl.blockProcess(processName);
-                    isProcessCaptured = true;
-                } else {
-                    System.out.println(processName + " is not running.");
-                }
-            } catch (InterruptedException | IOException e) {
-                logger.error("Error: " + e);
-            }
+        if (isProcessRunning(processName) && !isPassCheckDone) {
+            System.out.println(processName + " is running. Should be blocked.");
+            PassControl passControl = PassControl.getInstance();
+            passControl.startDaemonThread(processName);
+
+            isPassCheckDone = true;
+
+            passControl.checkPass(processName);
+
+        } else if (isProcessRunning(processName) && isPassCheckDone) {
+            System.out.println(processName + " is running. Pass check had done");
+        } else {
+            System.out.println((processName) + " is not running");
+            isPassCheckDone = false;
         }
     }
+
 
     private boolean isProcessRunning(String processName) {
         try {

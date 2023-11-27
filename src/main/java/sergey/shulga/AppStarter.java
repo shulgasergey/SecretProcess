@@ -7,12 +7,12 @@ import java.io.IOException;
 
 public class AppStarter {
 
-    private static final Logger logger = LogManager.getLogger(CheckProcess.class);
+    private static final Logger logger = LogManager.getLogger(AppStarter.class);
 
     protected void startApp(String processName) {
         try {
-            Process exitProcess = Runtime.getRuntime().exec("open -a " + processName);
-            exitProcess.waitFor();
+            Process startProcess = Runtime.getRuntime().exec("open -a " + processName);
+            startProcess.waitFor();
         } catch (InterruptedException | IOException e) {
             logger.error("Error: " + e);
         }
