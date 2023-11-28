@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bfd9841d-0b79-465c-b276-f38773586772" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="bfd9841d-0b79-465c-b276-f38773586772" name="Changes" comment="Added some changes for more correctly work.&#10;Not release version yet.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sergey/shulga/AppStarter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sergey/shulga/AppStarter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sergey/shulga/CheckProcess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sergey/shulga/CheckProcess.java" afterDir="false" />
@@ -93,11 +92,24 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1701018471041</updated>
-      <workItem from="1701018472049" duration="12419000" />
+      <workItem from="1701018472049" duration="14619000" />
     </task>
+    <task id="LOCAL-00001" summary="Added some changes for more correctly work.&#10;Not release version yet.">
+      <option name="closed" value="true" />
+      <created>1701119055420</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1701119055420</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added some changes for more correctly work.&#10;Not release version yet." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added some changes for more correctly work.&#10;Not release version yet." />
   </component>
 </project>
