@@ -13,9 +13,13 @@ public class CheckProcess {
 
     private static final Logger logger = LogManager.getLogger(CheckProcess.class);
     private boolean isPassCheckDone = false;
+    BlockProcess blockProcess = new BlockProcess();
 
+    /*
+    Поток-демон для проверки запущен ли процесс.
+    Выполняется постоянно в цикле как служебный поток.
+     */
     protected void startChecking() {
-        // Daemon поток для проверки запущен ли процесс
         ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
         scheduler.scheduleAtFixedRate(this::checkProcess, 0, 1, TimeUnit.SECONDS);
     }
@@ -25,20 +29,27 @@ public class CheckProcess {
 
         if (isProcessRunning(processName) && !isPassCheckDone) {
             System.out.println(getTime() + " " + processName + " is running. Should be blocked.");
-            PassControl passControl = new PassControl();
-            passControl.startDaemonThread(processName);
-
+            blockProcess.startDaemonDestroyThread(processName); // Поток для блокировки приложения до ввода правильного пароля
             isPassCheckDone = true;
-            passControl.checkPass(processName);
+            // Фрейм с вводом пароля, там после ввода будет вызвана проверка пароля
+            InputPassGetter inputPassGetter = new InputPassGetter();
+            inputPassGetter.inputPassword(processName);
+
         } else if (isProcessRunning(processName) && isPassCheckDone) {
             System.out.println(getTime() + " " + processName + " is running. Pass check had done");
+
         } else {
             System.out.println(getTime() + " " + (processName) + " is not running");
             isPassCheckDone = false;
+
+            // Если приложение закрыли, снова запускаем поток-демон блокировать приложение до ввода правильного пароля
+            blockProcess.setDaemonDestroyThreadFlag(true);
         }
     }
 
-
+    /*
+    Определение текущего состояния выбранного процесса.
+     */
     private boolean isProcessRunning(String processName) {
         try {
             ProcessBuilder processBuilder = new ProcessBuilder("pgrep", processName);

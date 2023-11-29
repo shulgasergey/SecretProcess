@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bfd9841d-0b79-465c-b276-f38773586772" name="Changes" comment="Added some changes for more correctly work.&#10;Not release version yet.">
+    <list default="true" id="bfd9841d-0b79-465c-b276-f38773586772" name="Changes" comment="Added some changes for more correctly work.&#10;Fixed password bypass.&#10;Not release version yet.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/sergey/shulga/BlockProcess.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sergey/shulga/AppStarter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sergey/shulga/AppStarter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sergey/shulga/CheckProcess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sergey/shulga/CheckProcess.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sergey/shulga/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sergey/shulga/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sergey/shulga/PassControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sergey/shulga/PassControl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sergey/shulga/PassControl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sergey/shulga/PasswordChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sergey/shulga/PasswordChecker.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +92,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1701018471041</updated>
-      <workItem from="1701018472049" duration="14619000" />
+      <workItem from="1701018472049" duration="26378000" />
     </task>
     <task id="LOCAL-00001" summary="Added some changes for more correctly work.&#10;Not release version yet.">
       <option name="closed" value="true" />
@@ -102,7 +102,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701119055420</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added some changes for more correctly work.&#10;Fixed password bypass.&#10;Not release version yet.">
+      <option name="closed" value="true" />
+      <created>1701212282013</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1701212282013</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -110,6 +118,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added some changes for more correctly work.&#10;Not release version yet." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added some changes for more correctly work.&#10;Not release version yet." />
+    <MESSAGE value="Added some changes for more correctly work.&#10;Fixed password bypass.&#10;Not release version yet." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added some changes for more correctly work.&#10;Fixed password bypass.&#10;Not release version yet." />
   </component>
 </project>
